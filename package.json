@@ -22,7 +22,9 @@
     "@electron-forge/plugin-fuses": "^7.9.0",
     "@electron-forge/plugin-vite": "^7.9.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "^38.1.0"
+    "electron": "^38.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"
