@@ -1,0 +1,55 @@
+# Node / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build / Output
+/dist
+/out
+/build
+.release
+*.tgz
+
+# Electron / Forge
+out/
+*.asar
+
+# OS / Editor / Ambiente
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+logs/
+*.log
+*.log.*
+*.pid
+*.seed
+*.pid.lock
+
+# Cache / Temp
+.cache/
+.temp/
+.vite/
+.vitepress/
+*.local
+*.tmp
+
+# Environment / config privados
+.env
+.env.local
+.env.*.local
+
+# Outros
+*.tgz
+*.zip
+*.7z
