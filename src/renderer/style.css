@@ -1,0 +1,276 @@
+/* Widget K7 - Mock de UI (T30) - efeito de vidro na fita */
+:root {
+    --bg: #0d0f12;
+    --cassette: #2b2b2f;
+    --cassette-edge: #3a3a3f;
+    --label: #c32024;
+    --label-dark: #9d1013;
+    --text: #e7e9ee;
+    --text-dim: #b6bcc8;
+    --shadow: rgba(0, 0, 0, .45);
+    --window: #111216;
+    --glass: linear-gradient(145deg, rgba(255, 255, 255, .06), rgba(0, 0, 0, .25));
+    --tape: #d6d6d6;
+    --btn: #1f2126;
+    --btn-edge: #111216;
+    --btn-active: #2f3240;
+    --green: #3ad16f;
+    --red: #ef476f;
+    --accent: #58a6ff;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: radial-gradient(1200px 700px at 50% 20%, #151821 0%, #0b0d12 70%);
+    color: var(--text);
+    font: 500 14px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+}
+
+.k7 {
+    width: 420px;
+    height: 320px;
+    position: relative;
+    padding: 14px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #32343a 0%, var(--cassette) 9%, #25262b 100%);
+    box-shadow: 0 20px 50px var(--shadow), inset 0 2px 0 #4a4d55, inset 0 -2px 0 #18191d;
+    border: 1px solid #202228;
+}
+
+.k7__inner {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 78px auto auto;
+    gap: 0
+}
+
+.label {
+    background: linear-gradient(180deg, var(--label) 0%, var(--label-dark) 100%);
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 12px
+}
+
+.track {
+    font-size: 13px;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700
+}
+
+.window {
+    height: 140px;
+    padding: 0 14px;
+    border-radius: 0 0 10px 10px;
+    background: var(--window);
+    border: 1px solid #15171b;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .05), inset 0 -1px 0 rgba(0, 0, 0, .7), 0 2px 8px rgba(0, 0, 0, .35);
+    display: grid;
+    grid-template-columns: 1fr 140px 1fr;
+    align-items: center;
+    justify-items: center;
+    background-image: var(--glass);
+    overflow: hidden;
+    position: relative;
+}
+
+.reel {
+    position: relative;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    margin: auto;
+    background:
+        radial-gradient(circle at 50% 50%, #a9a9a9 0 8px, transparent 8px 9px),
+        radial-gradient(circle at 50% 50%, #c5c5c5 0 28px, #8d8d8d 28px 100%);
+    box-shadow: inset 0 0 0 2px #3a3a3a, inset 0 0 14px rgba(0, 0, 0, .45), 0 6px 10px rgba(0, 0, 0, .35);
+    border: 1px solid #23252a;
+    display: grid;
+    place-items: center;
+}
+
+.reel .spoke {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 22px;
+    background: #2a2c31;
+    border-radius: 3px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-26px)
+}
+
+.reel .spoke:nth-child(1) {
+    --angle: 0deg
+}
+
+.reel .spoke:nth-child(2) {
+    --angle: 60deg
+}
+
+.reel .spoke:nth-child(3) {
+    --angle: 120deg
+}
+
+.reel .spoke:nth-child(4) {
+    --angle: 180deg
+}
+
+.reel .spoke:nth-child(5) {
+    --angle: 240deg
+}
+
+.reel .spoke:nth-child(6) {
+    --angle: 300deg
+}
+
+.tape {
+    height: 16px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 6px;
+    background:
+        repeating-linear-gradient(90deg, var(--tape) 0 6px, #bdbdbd 6px 12px),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 40%);
+    background-blend-mode: overlay;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .4),
+        inset 0 -1px 0 rgba(0, 0, 0, .5),
+        0 0 6px rgba(255, 255, 255, .2);
+}
+
+.status {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    font-size: 13px;
+    color: var(--text-dim)
+}
+
+.control-bar {
+    width: 92%;
+    margin: 0 auto;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: var(--window);
+    border: 1px solid #15171b;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), inset 0 -1px 0 rgba(0, 0, 0, .7), 0 6px 20px rgba(0, 0, 0, .35);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px
+}
+
+.btn {
+    width: 46px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2a2c33, var(--btn));
+    border: 1px solid var(--btn-edge);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    overflow: hidden;
+    box-shadow: 0 2px 0 #0a0b0e, 0 6px 14px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .05);
+    transition: transform .08s ease, background .2s ease;
+}
+
+.btn:active {
+    transform: translateY(2px);
+    background: var(--btn-active)
+}
+
+.btn.playpause {
+    color: var(--green)
+}
+
+.btn.stop {
+    color: var(--red)
+}
+
+.btn.logo {
+    width: 46px;
+    height: 40px;
+    padding: 0
+}
+
+.btn.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block
+}
+
+.btn.volume {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 40px;
+    width: 46px
+}
+
+.btn.volume button {
+    all: unset;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--accent);
+    background: linear-gradient(180deg, #2a2c33, var(--btn));
+    line-height: 1
+}
+
+.btn.volume button:first-child {
+    border-bottom: 1px solid #0a0c0f
+}
+
+.btn.volume button:active {
+    background: var(--btn-active);
+    color: #fff
+}
+
+.playing .reel {
+    animation: spin 2.4s linear infinite
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}

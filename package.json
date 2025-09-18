@@ -2,7 +2,7 @@
   "name": "k7-widget",
   "version": "1.0.0",
   "description": "Tiny youtube widget for windows 11",
-  "main": "index.js",
+  "main": ".vite/build/main/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
@@ -22,9 +22,11 @@
     "@electron-forge/plugin-fuses": "^7.9.0",
     "@electron-forge/plugin-vite": "^7.9.0",
     "@electron/fuses": "^1.8.0",
+    "@types/node": "^24.5.2",
     "electron": "^38.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite": "^6.3.6"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"

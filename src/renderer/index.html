@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget K7 – Mock UI</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="k7" id="k7">
+        <div class="k7__inner">
+            <div class="label">
+                <div>
+                    <div class="brand">Widget K7 • Stereo</div>
+                    <div class="track" id="trackTitle">Unknown Track – Demo Mix</div>
+                </div>
+                <div class="time" id="timeDisplay">00:00</div>
+            </div>
+
+            <div class="window">
+                <div class="reel" aria-hidden="true">
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                </div>
+                <div class="tape" aria-hidden="true"></div>
+                <div class="reel" aria-hidden="true">
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                    <div class="spoke"></div>
+                </div>
+                <div class="status" id="status">Parado</div>
+            </div>
+
+            <div class="control-bar">
+                <div class="controls">
+                    <button class="btn" id="prev" title="Anterior">⏮</button>
+                    <button class="btn playpause" id="playpause" aria-pressed="false"
+                        title="Reproduzir/Pausar">▶/⏸</button>
+                    <button class="btn stop" id="stop" title="Parar">⏹</button>
+                    <button class="btn" id="next" title="Próxima">⏭</button>
+
+                    <div class="btn volume" title="Volume">
+                        <button id="volUp">+</button>
+                        <button id="volDown">-</button>
+                    </div>
+
+                    <button class="btn logo" id="logoBtn" title="Página do projeto">
+                        <img src="../assets/tape logo.png" alt="Logo do Projeto">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
