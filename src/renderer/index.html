@@ -43,9 +43,14 @@
             <div class="control-bar">
                 <div class="controls">
                     <button class="btn" id="prev" title="Anterior">⏮</button>
-                    <button class="btn playpause" id="playpause" aria-pressed="false"
-                        title="Reproduzir/Pausar">▶/⏸</button>
-                    <button class="btn stop" id="stop" title="Parar">⏹</button>
+
+                    <!-- Play/Pause com transição -->
+                    <button class="btn playpause" id="playpause" aria-pressed="false" title="Reproduzir">
+                        <span class="icon icon--play" aria-hidden="true">▶</span>
+                        <span class="icon icon--pause" aria-hidden="true">⏸</span>
+                        <span class="sr-only" id="playpauseText">Reproduzir</span>
+                    </button>
+
                     <button class="btn" id="next" title="Próxima">⏭</button>
 
                     <div class="btn volume" title="Volume">
@@ -54,15 +59,15 @@
                     </div>
 
                     <button class="btn logo" id="logoBtn" title="Página do projeto">
-                        <img src="../assets/tape logo.png" alt="Logo do Projeto">
+                        <!-- sem src: JS injeta a URL resolvida pelo Vite -->
+                        <img id="logoImg" alt="Logo do Projeto">
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 
 </html>

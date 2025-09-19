@@ -2,10 +2,16 @@ const root = document.getElementById('k7');
 const timeDisplay = document.getElementById('timeDisplay');
 const statusEl = document.getElementById('status');
 const playpauseBtn = document.getElementById('playpause');
-const stopBtn = document.getElementById('stop');
 const logoBtn = document.getElementById('logoBtn');
 const volUpBtn = document.getElementById('volUp');
 const volDownBtn = document.getElementById('volDown');
+
+/* ---- LOGO via Vite ----
+   Se o arquivo ainda se chama "tape logo.png", esta linha resolve ok.
+   Se renomear para "tape-logo.png", troque o caminho. */
+const logoImg = document.getElementById('logoImg');
+logoImg.src = new URL('../assets/tape-logo.png', import.meta.url).href;
+// logoImg.src = new URL('../assets/tape-logo.png', import.meta.url).href;
 
 let playing = false;
 let timer = null;
@@ -25,21 +31,16 @@ function togglePlayPause() {
     root.classList.toggle('playing', playing);
     statusEl.textContent = playing ? 'Reproduzindo' : 'Pausado';
     playpauseBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+
+    playpauseBtn.title = playing ? 'Pausar' : 'Reproduzir';
+    const sr = document.getElementById('playpauseText');
+    if (sr) sr.textContent = playing ? 'Pausar' : 'Reproduzir';
+
     clearInterval(timer);
     if (playing) timer = setInterval(tick, 1000);
 }
 
 playpauseBtn.addEventListener('click', togglePlayPause);
-
-stopBtn.addEventListener('click', () => {
-    playing = false;
-    root.classList.remove('playing');
-    seconds = 0;
-    timeDisplay.textContent = '00:00';
-    statusEl.textContent = 'Parado';
-    clearInterval(timer);
-    playpauseBtn.setAttribute('aria-pressed', 'false');
-});
 
 logoBtn.addEventListener('click', () => {
     window.open('https://example.com', '_blank');

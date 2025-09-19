@@ -34,8 +34,7 @@ Ele simula uma **fita cassete clássica** em formato de widget, unindo **visual 
 
 ## 📷 Preview
 
-*(Aqui você pode adicionar prints da interface do widget rodando)*  
-
+![alt text](image.png)
 ---
 
 ## 🛠️ Como Rodar o Projeto
