@@ -43,7 +43,7 @@ function togglePlayPause() {
 playpauseBtn.addEventListener('click', togglePlayPause);
 
 logoBtn.addEventListener('click', () => {
-    window.open('https://example.com', '_blank');
+    window.open('https://github.com/miltonmateus/k7-widget?tab=readme-ov-file', '_blank');
 });
 
 volUpBtn.addEventListener('click', () => {
