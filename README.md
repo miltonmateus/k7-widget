@@ -2,7 +2,7 @@
 # 🎵 Widget Fita K7 para Windows
 
 <p align="center">
-  <img src="./src/assets/tape logo.png" alt="Logo do Projeto" width="300"/>
+  <img src="./src/assets/tape-logo.png" alt="Logo do Projeto" width="300"/>
 </p>
 
 ## 📀 Sobre o Projeto
